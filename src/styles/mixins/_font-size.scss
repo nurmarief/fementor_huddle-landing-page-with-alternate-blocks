@@ -1,0 +1,154 @@
+@use 'sass:map';
+// variables dir files
+@use '../variables/breakpoints' as bp;
+@use '../variables/font-size' as fs;
+// mixins dir files
+@use './responsive-display' as rd;
+
+// HEADING
+
+@mixin heading-1 {
+  font-size: map.get(fs.$font-size-heading-mobile, 'h1');
+
+  @include rd.tablet-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-tablet, 'h1');
+    }
+  }
+
+  @include rd.desktop-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-desktop, 'h1');
+    }
+  }
+}
+
+@mixin heading-2 {
+  font-size: map.get(fs.$font-size-heading-mobile, 'h2');
+
+  @include rd.tablet-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-tablet, 'h2');
+    }
+  }
+
+  @include rd.desktop-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-desktop, 'h2');
+    }
+  }
+}
+
+@mixin heading-3 {
+  font-size: map.get(fs.$font-size-heading-mobile, 'h3');
+
+  @include rd.tablet-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-tablet, 'h3');
+    }
+  }
+
+  @include rd.desktop-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-desktop, 'h3');
+    }
+  }
+}
+
+@mixin heading-4 {
+  font-size: map.get(fs.$font-size-heading-mobile, 'h4');
+
+  @include rd.tablet-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-tablet, 'h4');
+    }
+  }
+
+  @include rd.desktop-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-desktop, 'h4');
+    }
+  }
+}
+
+@mixin heading-5 {
+  font-size: map.get(fs.$font-size-heading-mobile, 'h5');
+
+  @include rd.tablet-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-tablet, 'h5');
+    }
+  }
+
+  @include rd.desktop-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-desktop, 'h5');
+    }
+  }
+}
+
+@mixin heading-6 {
+  font-size: map.get(fs.$font-size-heading-mobile, 'h6');
+
+  @include rd.tablet-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-tablet, 'h6');
+    }
+  }
+
+  @include rd.desktop-display {
+    & {
+      font-size: map.get(fs.$font-size-heading-desktop, 'h6');
+    }
+  }
+}
+
+// PARAGRAPH
+
+@mixin paragraph-lead {
+  font-size: map.get(fs.$font-size-paragraph-mobile, 'lead');
+
+  @include rd.tablet-display {
+    & {
+      font-size: map.get(fs.$font-size-paragraph-tablet, 'lead');
+    }
+  }
+
+  @include rd.desktop-display {
+    & {
+      font-size: map.get(fs.$font-size-paragraph-desktop, 'lead');
+    }
+  }
+}
+
+@mixin paragraph-body {
+  font-size: map.get(fs.$font-size-paragraph-mobile, 'body');
+
+  @include rd.tablet-display {
+    & {
+      font-size: map.get(fs.$font-size-paragraph-tablet, 'body');
+    }
+  }
+
+  @include rd.desktop-display {
+    & {
+      font-size: map.get(fs.$font-size-paragraph-desktop, 'body');
+    }
+  }
+}
+
+@mixin paragraph-small {
+  font-size: map.get(fs.$font-size-paragraph-mobile, 'small');
+
+  @include rd.tablet-display {
+    & {
+      font-size: map.get(fs.$font-size-paragraph-tablet, 'small');
+    }
+  }
+
+  @include rd.desktop-display {
+    & {
+      font-size: map.get(fs.$font-size-paragraph-desktop, 'small');
+    }
+  }
+}
