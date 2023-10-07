@@ -1,0 +1,97 @@
+@use 'sass:map';
+// VARIABLES
+@use '../../variables/color-palette' as cp;
+@use '../../variables/spaces' as sp;
+//MIXINS
+@use '../../mixins/responsive-display' as rd;
+@use '../../mixins/font-size' as fs;
+
+.banner {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: map.get(sp.$spaces, 'extra-large');
+  padding: map.get(sp.$spaces, 'large') map.get(sp.$spaces, 'large');
+  color: map.get(cp.$color-palette, 'very-dark-cyan');
+  background: map.get(cp.$color-palette, 'very-pale-cyan')
+    url('../images/bg-hero-mobile.svg') no-repeat;
+
+  @include rd.mobile-lg-display {
+    & {
+      padding-inline: map.get(sp.$spaces, 'extra-large');
+    }
+  }
+
+  @include rd.tablet-lg-display {
+    & {
+      grid-template-columns: repeat(2, 1fr);
+      gap: map.get(sp.$spaces, 'small');
+      padding-inline: map.get(sp.$spaces, 'medium');
+      background-image: url('../images/bg-hero-desktop.svg');
+    }
+  }
+
+  @include rd.desktop-display {
+    & {
+      padding-inline: map.get(sp.$spaces, 'extra-large');
+      gap: map.get(sp.$spaces, 'extra-large');
+    }
+  }
+}
+
+.banner__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: map.get(sp.$spaces, 'large');
+  text-align: center;
+
+  @include rd.tablet-lg-display {
+    & {
+      align-items: start;
+      gap: map.get(sp.$spaces, 'large');
+      padding-top: map.get(sp.$spaces, 'medium');
+      text-align: left;
+    }
+  }
+
+  @include rd.desktop-display {
+    & {
+      padding-top: map.get(sp.$spaces, 'extra-large');
+    }
+  }
+}
+
+.banner__title {
+  @include fs.heading-1;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.banner__text {
+  @include fs.paragraph-body;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+
+  @include rd.tablet-display {
+    & {
+      padding-inline: map.get(sp.$spaces, 'large');
+    }
+  }
+
+  @include rd.tablet-lg-display {
+    & {
+      padding: 0;
+    }
+  }
+}
+
+.banner__button {
+  width: 90%;
+
+  @include rd.tablet-display {
+    & {
+      width: fit-content;
+    }
+  }
+}

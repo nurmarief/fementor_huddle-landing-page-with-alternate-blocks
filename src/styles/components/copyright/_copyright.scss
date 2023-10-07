@@ -1,0 +1,19 @@
+@use 'sass:map';
+// VARIABLES
+@use '../../variables/spaces' as sp;
+// MIXINS
+@use '../../mixins/font-size' as fs;
+@use '../../mixins/responsive-display' as rd;
+
+.copyright {
+  display: block;
+  @include fs.paragraph-small;
+  text-align: center;
+  margin-top: map.get(sp.$spaces, 'large');
+
+  @include rd.mobile-lg-display {
+    & {
+      text-align: right;
+    }
+  }
+}

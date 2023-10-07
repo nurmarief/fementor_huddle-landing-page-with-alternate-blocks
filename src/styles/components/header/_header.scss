@@ -1,0 +1,6 @@
+@use 'sass:map';
+@use '../../variables/color-palette' as cp;
+
+.header {
+  background-color: map.get(cp.$color-palette, 'very-pale-cyan');
+}

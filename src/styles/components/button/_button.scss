@@ -1,0 +1,50 @@
+@use 'sass:map';
+// VARIABLES
+@use '../../variables/color-palette' as cp;
+@use '../../variables/spaces' as sp;
+@use '../../variables/box-shadow' as bs;
+
+// MIXINS
+@use '../../mixins/font-size' as fs;
+@use '../../mixins/responsive-display' as rd;
+
+.button {
+  @include fs.paragraph-body;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  color: map.get(cp.$color-palette, 'very-dark-cyan');
+  display: inline-block;
+  border-radius: 999999em;
+  padding: map.get(sp.$spaces, 'medium');
+  background-color: map.get(cp.$color-palette, 'white');
+  box-shadow: map.get(bs.$box-shadow, 'bottom-right');
+  text-decoration: none;
+  text-align: center;
+
+  transition: all 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  &:active {
+    box-shadow: map.get(bs.$box-shadow, 'inset');
+  }
+}
+
+.button_size_small {
+  @include fs.paragraph-small;
+  padding: map.get(sp.$spaces, 'small') map.get(sp.$spaces, 'medium');
+}
+
+.button_get-started-btn {
+  display: block;
+  color: map.get(cp.$color-palette, 'white');
+  background-color: map.get(cp.$color-palette, 'pink');
+
+  &:hover {
+    $pink: map.get(cp.$color-palette, 'pink');
+    background-color: lighten($pink, 10%);
+  }
+}

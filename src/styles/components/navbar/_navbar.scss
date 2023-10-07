@@ -1,0 +1,38 @@
+@use 'sass:map';
+// VARIABLES
+@use '../../variables/spaces' as sp;
+// MIXINS
+@use '../../mixins/responsive-display' as rd;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: map.get(sp.$spaces, 'large') map.get(sp.$spaces, 'medium');
+
+  @include rd.desktop-display {
+    & {
+      padding-inline: map.get(sp.$spaces, 'extra-large');
+    }
+  }
+}
+
+.navbar__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8em;
+  height: auto;
+}
+
+.navbar__items {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+}
+
+.navbar__item {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+}

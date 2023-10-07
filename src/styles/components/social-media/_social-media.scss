@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use '../../variables/spaces' as sp;
+@use '../../variables/color-palette' as cp;
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: map.get(sp.$spaces, 'medium');
+}
+
+.social-media__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.0625em solid map.get(cp.$color-palette, 'white');
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: map.get(cp.$color-palette, 'pink');
+    color: map.get(cp.$color-palette, 'pink');
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+}

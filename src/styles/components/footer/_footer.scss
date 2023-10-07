@@ -1,0 +1,16 @@
+@use 'sass:map';
+@use '../../variables/spaces' as sp;
+@use '../../variables/color-palette' as cp;
+
+.footer {
+  font-family: 'Open Sans', sans-serif;
+  padding: map.get(sp.$spaces, 'extra-extra-large')
+    map.get(sp.$spaces, 'medium') map.get(sp.$spaces, 'extra-large');
+  background-color: map.get(cp.$color-palette, 'very-dark-cyan');
+  color: map.get(cp.$color-palette, 'white');
+}
+
+.footer__site-logo {
+  margin: map.get(sp.$spaces, 'large') 0;
+  width: 10em;
+}

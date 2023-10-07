@@ -1,0 +1,29 @@
+@use 'sass:map';
+// VARIABLES
+@use '../../variables/spaces' as sp;
+// MIXINS
+@use '../../mixins/responsive-display' as rd;
+
+.company-contact {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: map.get(sp.$spaces, 'medium');
+  padding: map.get(sp.$spaces, 'medium') 0;
+
+  @include rd.mobile-lg-display {
+    & {
+      padding: 0;
+    }
+  }
+}
+
+.company-contact__item {
+  display: flex;
+  justify-content: left;
+  align-items: start;
+  gap: map.get(sp.$spaces, 'large');
+}
+
+.company-contact__item-logo {
+  flex: 0 0 1.1em;
+}
