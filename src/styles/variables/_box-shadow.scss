@@ -1,0 +1,13 @@
+@use 'sass:map';
+@use './color-palette' as cp;
+
+$shadow-color: map.get(cp.$color-palette, 'gray');
+
+$box-shadow: (
+  'bottom-right': 0.2em 0.2em 0.4em $shadow-color,
+  'inset': 0.2em 0.2em 0.2em $shadow-color inset,
+  'around': (
+    0.2em 0.2em 0.4em $shadow-color,
+    0.2em 0.2em 0.4em $shadow-color,
+  ),
+);
